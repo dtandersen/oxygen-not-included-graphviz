@@ -35,6 +35,7 @@ strict digraph G {
 	"Coal Generator" [shape=box];
 	"Coal" -> "Coal Generator";
 	"Coal Generator" -> "Electricity";
+	"Coal Generator" -> "CO2";
 
 	// plumbing
 	"Outhouse" [shape=box];
@@ -72,7 +73,12 @@ strict digraph G {
 
 	"Polluted Water" -> "Steam";
 	"Polluted Water" -> "Dirt";
+	"Polluted Water" -> "Polluted Oxygen";
+	"Polluted Water" -> "Polluted Ice";
+	"Polluted Ice" -> "Polluted Water";
 	"Water" -> "Steam";
+	"Geyser" [shape=box];
+	"Geyser" -> "Steam";
 
 	"Steam" -> "Water";
 
