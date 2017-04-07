@@ -1,0 +1,98 @@
+strict digraph G {
+	graph [concentrate=true]
+
+	// oxygen
+	"Algae Deoxydizer" [shape=box];
+	"Algae" -> "Algae Deoxydizer";
+	"Algae Deoxydizer" -> "Oxygen";
+
+	"Algae Terrarium" [shape=box];
+	"CO2" -> "Algae Terrarium";
+	"Water" -> "Algae Terrarium";
+	"Algae" -> "Algae Terrarium";
+	"Algae Terrarium" -> "Oxygen";
+
+	"Electrolyzer" [shape=box];
+	"Water" -> "Electrolyzer";
+	"Electrolyzer" -> "Oxygen";
+	"Electrolyzer" -> "Hydrogen";
+
+	"Air Deoderizer" [shape=box];
+	"Polluted Oxygen" -> "Air Deoderizer";
+	"Sand" -> "Air Deoderizer";
+	"Air Deoderizer" -> "Clay";
+	"Air Deoderizer" -> "Oxygen";
+
+	"Air Scrubber" [shape=box];
+	"CO2" -> "Air Scrubber";
+	"Water" -> "Air Scrubber";
+
+	// power
+	"Hydrogen Generator" [shape=box];
+	"Hydrogen" -> "Hydrogen Generator";
+	"Hydrogen Generator" -> "Electricity";
+
+	"Coal Generator" [shape=box];
+	"Coal" -> "Coal Generator";
+	"Coal Generator" -> "Electricity";
+
+	// plumbing
+	"Outhouse" [shape=box];
+	"Outhouse" -> "Polluted Dirt";
+
+	"Lavatory" [shape=box];
+	"Water" -> "Lavatory";
+	"Lavatory" -> "Polluted Water";
+
+	"Shower" [shape=box];
+	"Water" -> "Shower";
+	"Shower" -> "Polluted Water";
+
+	// refinement
+	"Bio Distiller" [shape=box];
+	"Slime" -> "Bio Distiller";
+	"Bio Distiller" -> "Algae";
+	"Bio Distiller" -> "Polluted Water";
+
+	"Water Purifier" [shape=box];
+	"Polluted Water" -> "Water Purifier";
+	"Sand" -> "Water Purifier";
+	"Water Purifier" -> "Water";
+
+	"Compost" [shape=box];
+	"Polluted Dirt" -> "Compost";
+	"Compost" -> "Fertilizer";
+
+	"Fertilizer Maker" [shape=box];
+	"Polluted Water" -> "Fertilizer Maker";
+	"Fertilizer Maker" -> "Fertilizer";
+
+	// resources
+	"Slime" -> "Polluted Oxygen";
+
+	"Polluted Water" -> "Steam";
+	"Polluted Water" -> "Dirt";
+	"Water" -> "Steam";
+
+	"Steam" -> "Water";
+
+	"Water" -> "Ice";
+	"Ice" -> "Water";
+
+	"Polluted Dirt" -> "Polluted Oxygen";
+
+	// creatures
+	"Hatch" [shape=egg];
+	"Hatch" -> "Coal";
+
+	"Morb" [shape=egg];
+	"Morb" -> "Polluted Oxygen";
+
+	"Puft" [shape=egg];
+	"Polluted Oxygen" -> "Puft";
+	"Puft" -> "Slime";
+
+	// plants
+	"Bristle Blossom" [shape=invtrapezium, label="Bristle\nBlossom", margin=0];
+	"Fertilizer" -> "Bristle Blossom";
+}
