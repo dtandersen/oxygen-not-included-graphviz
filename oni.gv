@@ -1,4 +1,7 @@
 strict digraph G {
+	overlap=false;
+	splines=true;
+
 	graph [concentrate=true]
 
 	// oxygen
@@ -80,6 +83,11 @@ strict digraph G {
 	"Water" -> "Steam";
 	"Geyser" [shape=box];
 	"Geyser" -> "Steam";
+
+	"Polluted Oxygen" -> "Liquid Oxygen";
+	"Oxygen" -> "Liquid Oxygen";
+
+	"Liquid Oxygen" -> "Oxygen";
 
 	"Steam" -> "Water";
 
