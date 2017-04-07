@@ -39,6 +39,7 @@ strict digraph G {
 
 	// plumbing
 	"Outhouse" [shape=box];
+	"Dirt" -> "Outhouse";
 	"Outhouse" -> "Polluted Dirt";
 
 	"Lavatory" [shape=box];
