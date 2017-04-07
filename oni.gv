@@ -97,8 +97,4 @@ strict digraph G {
 	"Puft" [shape=egg];
 	"Polluted Oxygen" -> "Puft";
 	"Puft" -> "Slime";
-
-	// plants
-	"Bristle Blossom" [shape=invtrapezium, label="Bristle\nBlossom", margin=0];
-	"Fertilizer" -> "Bristle Blossom";
 }
